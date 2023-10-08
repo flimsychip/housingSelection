@@ -23,7 +23,7 @@ public class HousingSelection {
         if (load.equalsIgnoreCase("part time") || load.equalsIgnoreCase("part")){
             points -= 1;
         }
-        //in or out of state DEBUG: new line needs to be consumed but idk where. i tried putting it before line 28 and after line 28, didn't work
+        //in or out of state
         System.out.print("are you from in state or out of state? ");
         var residency = input.nextLine();
         if (residency.equalsIgnoreCase("out of state") || residency.equalsIgnoreCase("out")){
@@ -31,6 +31,7 @@ public class HousingSelection {
         } else {
             System.out.print("how many miles are you from school? please estimate. ");
             int distance = input.nextInt();
+            input.nextLine();
             //farther means higher priority, super close means less. in the middle doesn't change anything
             if (distance >= 25){
                 points += 3;
@@ -39,7 +40,6 @@ public class HousingSelection {
             }
         }
         //economic background
-        input.nextLine();
         System.out.print("do you receive financial aid? ");
         var aid = input.nextLine();
         if (aid.equalsIgnoreCase("yes") || aid.equalsIgnoreCase("y")){
